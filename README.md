@@ -98,7 +98,7 @@ window.__ModuleLoader__.load({
 | `shell.overlay` | 帧级浮层（色条、HUD） | **全屏浮层只准 1 个**，`z-index` 固定低值，多个会互相盖 |
 | `conversation.composer.dock` | 输入框附近的常驻动作区 | 适合放动作按钮，不适合放长文本 |
 | `sidebar.session.row.leading` | 会话行首标记（竖杠/圆点） | **只在会话"空闲"行挂载**；运行中的行不显示——这是宿主行为，不是 bug |
-| `sidebar.workspaces.session.menu.item` | 会话「…」菜单项 | 与上一行配合：菜单里选，行首显示 |
+| `sidebar.workspaces.session.menu.item` | 会话「…」菜单项 | **0.2.2-alpha.3 起 owner 声明移到 `contextMenu.content` 的 `session` 键下**；该 Slot 仍保留给外部 React 条目（官方 README 明确 legacy）。新动作优先用 `ctx.contextMenus.register`，它加的是数据菜单项，不是 `contextMenu.content` 组件槽 |
 | `sidebar.panellist` + `main` | 侧栏常驻入口 + 整页工作台 | 两处 **id 必须一致**；`main` 的键 `conversation`/`plugins`/`schedules` 已被占 |
 | `sidebar.footer.action` | 侧栏底部动作 | owner 会把条目**竖排**堆叠 → **做不到"与某个按钮并排"**，想并排请放弃该席位 |
 
